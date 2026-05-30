@@ -1,0 +1,35 @@
+seed: 7
+
+dataset:
+  name: synthetic
+  grid_shape: [24, 24]
+  patch_size: 8
+  noise: 0.03
+
+representation:
+  name: pca
+  n_components: 12
+
+model:
+  name: gpytorch_gp
+  training_steps: 100
+  learning_rate: 0.08
+
+acquisition:
+  name: expected_improvement
+
+benchmark:
+  initial_points: 12
+  steps: 20
+
+output:
+  enabled: true
+  dir: outputs
+  run_name: pca_gp_ei
+  save_step_plots: true
+  save_step_pickles: true
+  save_trajectory_plot: true
+
+checkpoint:
+  save_model: false
+  load_model_path:

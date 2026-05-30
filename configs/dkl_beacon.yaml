@@ -1,0 +1,37 @@
+seed: 7
+
+dataset:
+  name: synthetic
+  grid_shape: [24, 24]
+  patch_size: 8
+  noise: 0.03
+
+representation:
+  name: patches
+
+model:
+  name: dkl
+  training_steps: 60
+  learning_rate: 0.01
+  feature_dim: 32
+  inducing_points: 24
+
+acquisition:
+  name: beacon
+  elite_fraction: 0.1
+
+benchmark:
+  initial_points: 12
+  steps: 20
+
+output:
+  enabled: true
+  dir: outputs
+  run_name: dkl_beacon
+  save_step_plots: true
+  save_step_pickles: true
+  save_trajectory_plot: true
+
+checkpoint:
+  save_model: false
+  load_model_path:

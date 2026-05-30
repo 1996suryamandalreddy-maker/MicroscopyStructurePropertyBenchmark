@@ -1,0 +1,38 @@
+seed: 11
+
+dataset:
+  name: stem_h5
+  path: data/raw/test_stem.h5
+  patch_size: 8
+  reward: dipole
+  normalize_reward: true
+
+representation:
+  name: patches
+
+model:
+  name: dkl
+  training_steps: 100
+  learning_rate: 0.01
+  feature_dim: 16
+  inducing_points: 12
+
+acquisition:
+  name: upper_confidence_bound
+  beta: 100000
+
+benchmark:
+  initial_points: 12
+  steps: 100
+
+output:
+  enabled: true
+  dir: outputs
+  run_name: stem_dkl_mu
+  save_step_plots: true
+  save_step_pickles: true
+  save_trajectory_plot: true
+
+checkpoint:
+  save_model: false
+  load_model_path:

@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and local tooling
+.venv/
+venv/
+env/
+.python-version
+
+# uv
+.uv-cache/
+
+# Local data and generated benchmark artifacts
+data/
+outputs/
+.matplotlib-cache/
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Generated figures and reports
+fig*.png
+fig*.pdf
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+llm-context/

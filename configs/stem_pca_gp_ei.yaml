@@ -1,0 +1,36 @@
+seed: 11
+
+dataset:
+  name: stem_h5
+  path: data/raw/test_stem.h5
+  patch_size: 8
+  reward: dipole
+  normalize_reward: true
+
+representation:
+  name: pca
+  n_components: 16
+
+model:
+  name: gpytorch_gp
+  training_steps: 100
+  learning_rate: 0.08
+
+acquisition:
+  name: expected_improvement
+
+benchmark:
+  initial_points: 12
+  steps: 100
+
+output:
+  enabled: true
+  dir: outputs
+  run_name: stem_pca_gp_ei
+  save_step_plots: true
+  save_step_pickles: true
+  save_trajectory_plot: true
+
+checkpoint:
+  save_model: true
+  load_model_path:
